@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const google = () => {
+    window.open("http://localhost:5000/auth/google", "_self");
+  };
+
   return (
     <div>
       <h1 className="my-12 md:my-24 text-center font-quicksand font-bold text-3xl text-gray-800">
@@ -10,7 +14,7 @@ const Login = () => {
         <div className="logCard">
           <div className="logSide">
             <h1 className="font-bold text-lg mb-5">Login Via Social Media</h1>
-            <div className="btn bg-red-500 hover:bg-red-600">
+            <div className="btn bg-red-500 hover:bg-red-600" onClick={google}>
               Login With Google
             </div>
             <div className="btn  bg-blue-500 hover:bg-blue-600">
