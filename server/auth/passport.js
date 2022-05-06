@@ -2,17 +2,16 @@ const passport = require("passport");
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
-const GitHubStrategy = require("passport-github2");
+const GitHubStrategy = require("passport-github2").Strategy;
 
-const GOOGLE_CLIENT_ID =
-  "373404686398-tbdpept4eqle4kfbjv2itc7t2rl2khls.apps.googleusercontent.com";
-const GOOGLE_CLIENT_SECRET = "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";
+require("dotenv").config({ path: "../.env" });
 
-const FACEBOOK_CLIENT_ID = "1032790357322088";
-const FACEBOOK_CLIENT_SECRET = "9555be0433da9448c381c2b435fcf945";
-
-const GITHUB_CLIENT_ID = "8315b2fea344f29e83fc";
-const GITHUB_CLIENT_SECRET = "8b438979efc3442748243422b6f1d5b5e903af94";
+GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+FACEBOOK_CLIENT_ID = process.env.FACEBOOK_CLIENT_ID;
+FACEBOOK_CLIENT_SECRET = process.env.FACEBOOK_CLIENT_SECRET;
+GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
+GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
 passport.use(
   new GoogleStrategy(

@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const passport = require("passport");
+require("dotenv").config({ path: "../.env" });
 
-const CLIENT_URL = "http://localhost:3000/";
+CLIENT_URL = process.env.CLIENT_URL;
 
 router.get("/login/success", (req, res) => {
   if (req.user) {
